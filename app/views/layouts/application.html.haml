@@ -3,7 +3,14 @@
   %head
     %title= @website_title
     = stylesheet_link_tag "960.css"
+    = stylesheet_link_tag "layout.css"
+    = stylesheet_link_tag "boxes.css"
     = stylesheet_link_tag *(['global'] + @stylesheets)
+    
+    = javascript_include_tag "jquery.min"
+    = javascript_include_tag "jquery-ui-1.8rc3.custom.min"
+    = javascript_include_tag "core"
+          
   %body
     .container_12
       .grid_12#header.nomargin
