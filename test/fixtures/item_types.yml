@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  icon_id: 1
+  price: 1
+  action_method: MyText
+
+two:
+  name: MyString
+  icon_id: 1
+  price: 1
+  action_method: MyText

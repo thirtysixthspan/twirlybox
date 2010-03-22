@@ -1,7 +1,15 @@
 require 'rubygems'
 require 'active_record'
 require 'twitter'
-require 'classes'
+
+require '../app/models/icon'
+require '../app/models/icon_type'
+require '../app/models/item'
+require '../app/models/item_type'
+require '../app/models/event'
+require '../app/models/event_type'
+require '../app/models/pattern'
+require '../app/models/user'
 
 ActiveRecord::Base.establish_connection(
       :adapter  => "mysql",
@@ -97,15 +105,57 @@ pattern = Pattern.new(:regex=>'/http:\/\/gowal.la\/s\/([\w\n\/]+)/i')
 pattern.event_type_id = event_type.id
 pattern.save
 
+
+icon_type = IconType.new(:name=>'Drinks', :picture=>'', :url=>'')
+icon_type.save
+
+coffee = Icon.new(:name=>'Coffee', :picture=>'/images/coffee.png', :url=>'', :icon_type_id=>icon_type.id)
+coffee.save
+
+beer = Icon.new(:name=>'Beer', :picture=>'/images/pint.png', :url=>'', :icon_type_id=>icon_type.id)
+beer.save
+
+tea = Icon.new(:name=>'Tea', :picture=>'/images/tea.png', :url=>'', :icon_type_id=>icon_type.id)
+tea.save
+
 user = User.new(:twitter_name=>'thirtysixthspan')
 user.save
+
+coffee_type = ItemType.new(:name=>"coffee", :price=>200, :icon_id=>coffee.id)
+coffee_type.save
+
+item = Item.new(:user_id=>user.id, :item_type_id=>coffee_type.id)
+item.save
+
+beer_type = ItemType.new(:name=>"beer", :price=>200, :icon_id=>beer.id)
+beer_type.save
+
+item = Item.new(:user_id=>user.id, :item_type_id=>beer_type.id)
+item.save
+
+tea_type = ItemType.new(:name=>"tea", :price=>200, :icon_id=>tea.id)
+tea_type.save
+
+item = Item.new(:user_id=>user.id, :item_type_id=>tea_type.id)
+item.save
+
+user = User.new(:twitter_name=>'ultimatecoder')
+user.save
+
+item = Item.new(:user_id=>user.id, :item_type_id=>beer_type.id)
+item.save
 
 user = User.new(:twitter_name=>'blakecr')
 user.save
 
+item = Item.new(:user_id=>user.id, :item_type_id=>tea_type.id)
+item.save
+
 user = User.new(:twitter_name=>'jonjonsiler')
 user.save
 
+item = Item.new(:user_id=>user.id, :item_type_id=>tea_type.id)
+item.save
 
 
 

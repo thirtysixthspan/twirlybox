@@ -1,10 +1,3 @@
-/* 
-    Document   : boxes
-    Created on : Mar 20, 2010, 1:48:15 PM
-    Author     : jsiler
-    Description:
-        Purpose of the stylesheet follows.
-*/
 
 .container {
   background: #f1f2e6;
@@ -17,79 +10,45 @@
   top:0;
   left:0;
 }
-.followed {
-  width:25em;
-  padding: 6px 10px 10px;
-  float:left;
-}
-.container h3,
-#new a,
-#new label{
+
+.container h2 {
   color: #bfbe99;
   font-weight: bold;
   margin-bottom:5px;
   font-size: 2em;
   text-decoration: none;
+  text-align:left;
 }
-#new label{
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: 1em;
-}
-#share select {
- display:inline;
- width:80%;
- background-color: transparent;
- position:absolute;
- top: -1.5em; left:0;
- border:none;padding:0 4px ;
- height: 1.2em;
- color: #bfbe99;
- font-weight: bold;
- margin:0 1em 5px 0;
- font-size: 1.2em;
-}
-#share option {
-  font-size: 1em;
-  display:block;
-  padding:5px 10px;
-  background-color: white;
-}
-#share .submit {
-  position:absolute;
-  top:-1.5em; right:0;
-  background-color: white;
-  border: 1px solid brown;
-}
-#new #makenew {
-  display: inline;
-  width:1em;
-}
+
 .sprite {
   width:75px;
   height:75px;
+  padding: 10px;
   float:left;
-  background-color: fuchsia;
   margin:5px;
+  text-align:center;
+  font-size: .7em;
+  border: 2px solid #f1f2e6;
 }
+
 .hot {
-  background-color: yellow;
+  background-color: #ffa;
 }
+
+.enlarge {
+  border: 2px solid #000;
+  width:85px;
+  height:85px;
+  padding: 5px;
+}
+
+
 .active {
-  background-color: aqua;
+  background-color: #ffa;
 }
-#share {
-  margin-top:4em;
-  text-align: center;
-  position: relative;
-  top:0;
-  left:0;
+
+#friends_bin {
+  font-size: 1em;
 }
-#share.hot {
-  background-image: url('../images/item_add.png');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-#share .sprite {
-  display:inline;
-}
+
+

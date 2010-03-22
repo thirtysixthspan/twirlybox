@@ -1,0 +1,24 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Item:
+  fields:
+    list: user_id, item_type_id
+    form: user_id, item_type_id
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: twirlybox
+
+ItemType:
+  fields:
+    list: name, icon_id, price
+    form: name, icon_id, price, action_method
+  order_by: 
+  relationships: 
+  filters: 
+  search: name
+  application: twirlybox
+
