@@ -37,6 +37,7 @@ function rebuildDD () {
 		stop: function(ev,el) {el.helper.removeClass('active');}
   });
 
+  //if dropping sprites from the store we need to limit the accept selector to #store .sprite
   $vault.droppable({
 		accept: '.sprite',
 		zIndex: 10,
@@ -51,6 +52,18 @@ function rebuildDD () {
 
 }
 
+/*
+ *the function that is called when a draggable is dropped on a follower
+ *expects Object
+ *returns boolean ?mixed for error control?
+ */
+function sendItem (el) {
+  //here we want to sanitze the input, I suppose grab our session or form "token" and enclose it in a post
+ 
+  //$.post(url /* controller url */, el /*our option object ?does it need to be an assoc array? */, function(data) {/*do something here on success/fail*/} );
+
+  return true;
+}
 
 $(function() {
 	screen_name = $('#user_name').html();
@@ -59,7 +72,8 @@ $(function() {
     $("#friends_bin").append("<div class='friend'>TEST</div>")
 	  for (i in json.users) {
       var d = document.createElement('div');
-      d.className = 'friend sprite';
+      d.className = 'friend';
+	  d.id = json.users[i].screen_name; //add a unique friend identifier
       var img = document.createElement('img');
       img.setAttribute("width", "75");
       img.setAttribute("src", json.users[i].profile_image_url);
@@ -72,9 +86,14 @@ $(function() {
 				zIndex: 50,
 				over: function(ev,el) {$(this).addClass('enlarge');},
 				out: function (ev,el) {$(this).removeClass('enlarge')},
-				drop: function(ev, el) {
-					$(this).removeClass("enlarge");
-					move(el.draggable, $friends);
+				drop: function (ev,el) {
+				  $(this).removeClass("enlarge");
+				  var option={itemid:el.draggable.attr("id"), userid:$(this).attr("id")};
+				  alert(option.userid+": "+ option.itemid);//this is just here to see if it works
+				  //include the send function in the drop queue
+				  sendItem(option);
+				  el.draggable.fadeOut().remove();
+				  el.helper.fadeOut().remove(); //we can eliminate this step by changing the draggable helper to "original"
 				}
 		  });
 		}

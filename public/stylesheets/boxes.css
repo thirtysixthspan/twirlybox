@@ -20,7 +20,8 @@
   text-align:left;
 }
 
-.sprite {
+.sprite,
+.friend {
   width:75px;
   height:75px;
   padding: 10px;
