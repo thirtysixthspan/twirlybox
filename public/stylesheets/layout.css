@@ -1,0 +1,16 @@
+/* 
+    Document   : layout
+    Created on : Mar 20, 2010, 1:40:37 PM
+    Author     : Jonathan Siler
+    Description:
+        This file containes the root css definitions for the page. The styles for the actual twirlybox itself will be stored in boxes.css.
+		This will also be the core file definition that will be rewritten to control overrides for the "page" separate from the twirlboxes themselves.
+*/
+
+* {padding:0; margin:0;}/* reset all padding and margins */
+body {font-family: Helvetica, Arial, verdana, sans-serif;margin:0; padding:0; background-color:#e2e5cf;}
+a:hover {text-decoration: underline;}
+#header {height: 150px;background-color: #334;}
+#main {width:60em;margin:0 auto;padding:30px 0 50px;}
+#new {width:auto; text-align: center;}
+#footer {clear: both; background-color: #334; border-top: 1px solid #222; height:400px;}
