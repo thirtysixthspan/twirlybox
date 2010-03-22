@@ -5,10 +5,10 @@ require 'classes'
 
 ActiveRecord::Base.establish_connection(
       :adapter  => "mysql",
-      :socket => "/opt/local/var/run/mysql5/mysqld.sock",
+      :socket => "/tmp/mysql.sock",
       :database => "twirlybot_core",
       :username => "root",
-      :password => ""
+      :password => "homeslice"
 )
 
 #Pattern::reset_table
