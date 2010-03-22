@@ -8,9 +8,24 @@
 */
 
 * {padding:0; margin:0;}/* reset all padding and margins */
-body {font-family: Helvetica, Arial, verdana, sans-serif;margin:0; padding:0; background-color:#e2e5cf;}
+body {font-family: Helvetica, Arial, verdana, sans-serif;margin:0; padding:0; background-color: #334;/*background-color:#e2e5cf;*/}
 a:hover {text-decoration: underline;}
-#header {height: 150px;background-color: #334;}
-#main {width:60em;margin:0 auto;padding:30px 0 50px;}
+#header {background:transparent;height: 150px;position:relative; top:0; left:0;}
+#menu {top:0; left:0;}
+#menu li a {
+  color: orange;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 42px;
+  text-decoration: none;
+}
+
+#menu li a:hover{
+  color: #ffffff;
+  text-decoration: underline;
+}
+#body {background-color:#e2e5cf;}
+#main {width:auto;margin:0 auto;padding:30px 0 50px;}
 #new {width:auto; text-align: center;}
 #footer {clear: both; background-color: #334; border-top: 1px solid #222; height:400px;}
