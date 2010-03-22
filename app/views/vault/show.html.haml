@@ -1,0 +1,43 @@
+%h2
+  = controller.controller_name.upcase
+  #user_name= @user.twitter_name
+
+.clear
+.grid_12.divider.nomargin
+.clear
+
+/	  <form name="vaults" id="vaults" method="post" action="" >
+
+#main
+  #vault.container
+    %h2 Your Items
+
+    - @items.each do |item|
+      .sprite{:id=>item.id}
+        %img{:src=>item.item_type.icon.picture,:width=>"75px"} 
+        = item.item_type.name  
+
+    %br{:style=>"clear:left;"}
+
+  #store.container    
+    %h2 The Store
+
+    - @item_types.each do |item_type|
+      .sprite{:id=>item_type.id}
+        %img{:src=>item_type.icon.picture,:width=>"75px"} 
+        #{item_type.name}, #{number_to_currency item_type.price}  
+
+    %br{:style=>"clear:left;"}
+
+  #friends.container    
+    %h2 Your Friends
+
+    #friends_bin
+
+    %br{:style=>"clear:left;"}
+
+.clear
+.grid_12.divider.nomargin
+.clear
+
+
