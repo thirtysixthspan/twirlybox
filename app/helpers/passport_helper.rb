@@ -1,0 +1,2 @@
+module PassportHelper
+end

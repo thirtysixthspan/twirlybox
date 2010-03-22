@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title= @website_title
+    = stylesheet_link_tag "960.css"
+    = stylesheet_link_tag *(['global'] + @stylesheets)
+  %body
+    .container_12
+      .grid_12#header.nomargin
+        #nav_header
+          #menu
+            %ul
+              %li 
+                %a{:href=>"/#{params[:id]}"} Gallery           
+              %li 
+                %a{:href=>"/#{params[:id]}/vault"} Vault         
+              %li 
+                %a{:href=>"/#{params[:id]}/wallet"} Wallet
+              %li 
+                %a{:href=>"/#{params[:id]}/passport"} Passport           
+        #title 
+          %img{:src=>"/images/title.png"}
+          
+      .grid_12#body
+        = yield	
+   
+      .grid_12#footer
+        %ul
+          %li <a href="http://twitter.com/twirlybox"><img src="http://twitter-badges.s3.amazonaws.com/follow_us-b.png"/></a>
+

@@ -1,0 +1,64 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Event:
+  fields:
+    list: user_id, event_type_id, twitter_status_id
+    form: user_id, event_type_id, twitter_status_id
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: twirlybox
+
+EventType:
+  fields:
+    list: name, icon_id
+    form: name, icon_id
+  order_by: 
+  relationships: 
+  filters: 
+  search: name
+  application: twirlybox
+
+Icon:
+  fields:
+    list: name, picture, url, icon_type_id
+    form: name, picture, url, icon_type_id
+  order_by: 
+  relationships: 
+  filters: 
+  search: name
+  application: twirlybox
+
+IconType:
+  fields:
+    list: name, picture, url
+    form: name, picture, url
+  order_by: 
+  relationships: 
+  filters: 
+  search: name
+  application: twirlybox
+
+Pattern:
+  fields:
+    list: regex, event_type_id
+    form: regex, event_type_id
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: twirlybox
+
+User:
+  fields:
+    list: twitter_id, twitter_name
+    form: twitter_id, twitter_name
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: twirlybox
+
