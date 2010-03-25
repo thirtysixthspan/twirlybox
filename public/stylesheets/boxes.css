@@ -22,6 +22,10 @@
   text-align:left;
 }
 
+a.selected {
+  color: #fff;
+}
+
 .sprite,
 .friend,
 .next,
