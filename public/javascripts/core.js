@@ -60,7 +60,7 @@ function rebuildDD () {
 function sendItem (el) {
   //here we want to sanitze the input, I suppose grab our session or form "token" and enclose it in a post
  
-  //$.post(url /* controller url */, el /*our option object ?does it need to be an assoc array? */, function(data) {/*do something here on success/fail*/} );
+  $.post( $(this).attr("id") + "/vault/send/", el, function(data) {/*alert("Congrats");*/} );
 
   return true;
 }
@@ -69,7 +69,6 @@ $(function() {
 	screen_name = $('#user_name').html();
 	var friendsURL = "http://api.twitter.com/1/statuses/friends/" + screen_name + ".json?cursor=-1&callback=?";
 	$.getJSON(friendsURL,function(json){
-    $("#friends_bin").append("<div class='friend'>TEST</div>")
 	  for (i in json.users) {
       var d = document.createElement('div');
       d.className = 'friend';
@@ -89,7 +88,7 @@ $(function() {
 				drop: function (ev,el) {
 				  $(this).removeClass("enlarge");
 				  var option={itemid:el.draggable.attr("id"), userid:$(this).attr("id")};
-				  alert(option.userid+": "+ option.itemid);//this is just here to see if it works
+				  //alert(option.userid+": "+ option.itemid);//this is just here to see if it works
 				  //include the send function in the drop queue
 				  sendItem(option);
 				  el.draggable.fadeOut().remove();

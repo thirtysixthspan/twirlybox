@@ -19,16 +19,6 @@
 
     %br{:style=>"clear:left;"}
 
-  #store.container    
-    %h2 The Store
-
-    - @item_types.each do |item_type|
-      .sprite{:id=>item_type.id}
-        %img{:src=>item_type.icon.picture,:width=>"75px"} 
-        #{item_type.name}, #{number_to_currency item_type.price}  
-
-    %br{:style=>"clear:left;"}
-
   #friends.container    
     %h2 Your Friends
 

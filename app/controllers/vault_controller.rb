@@ -6,7 +6,12 @@ class VaultController < ApplicationController
 
     @items = @user.items      
     @item_types = ItemType.find(:all)
-
   end
+
+  def send_item
+    params[:itemid]
+    params[:userid]
+  end
+
 
 end
