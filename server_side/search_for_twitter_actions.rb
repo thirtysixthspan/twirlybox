@@ -1,10 +1,17 @@
 require 'rubygems'
 require 'active_record'
 require 'twitter'
-require 'classes'
 require 'gowalla'
 require 'base_n'
 
+require '../app/models/icon'
+require '../app/models/icon_type'
+require '../app/models/item'
+require '../app/models/item_type'
+require '../app/models/event'
+require '../app/models/event_type'
+require '../app/models/pattern'
+require '../app/models/user'
 
 ActiveRecord::Base.establish_connection(
       :adapter  => "mysql",
@@ -31,7 +38,7 @@ users.each do |user|
   puts("Matching #{user.twitter_name}")
 
   begin
-    search = base.user_timeline({:id => user.twitter_name})
+    search = base.user_timeline({:id => user.twitter_name, :count=>200})
     next unless search && search.size>0
   rescue => e
     puts "The error message was this: #{e}"
