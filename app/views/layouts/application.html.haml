@@ -3,7 +3,6 @@
   %head
     %title= @website_title
     = stylesheet_link_tag *(['global'] + @stylesheets)
-    = stylesheet_link_tag "960.css"
     = stylesheet_link_tag "layout.css"
     = stylesheet_link_tag "boxes.css"
     
@@ -12,6 +11,13 @@
     = javascript_include_tag "core"
           
   %body
+    #top
+      %span.pict
+      %span.name= params[:id]
+      %img{:src=>"/images/twit_tick.png",
+             :width=>"31",
+             :height=>"31",
+             :id => "twit"}
     .container_12
       .grid_12#header.nomargin
         %img{:src=>"/images/twirlybox_logo.png",
@@ -21,12 +27,24 @@
         #nav_header
           #menu
             %ul
-              %li 
-                %a{:href=>"/#{params[:id]}"} Gallery           
-              %li 
-                %a{:href=>"/#{params[:id]}/vault"} Vault         
-              %li 
-                %a{:href=>"/#{params[:id]}/passport"} Passport           
+              %li
+                - if controller.controller_name == "gallery"
+                  %a{:class=>'selected',
+                     :href=>"/#{params[:id]}"} Gallery
+                - else
+                  %a{:href=>"/#{params[:id]}"} Gallery
+              %li
+                - if controller.controller_name == "vault"
+                  %a{:class=>'selected',
+                     :href=>"/#{params[:id]}/vault"} Vault
+                - else
+                  %a{:href=>"/#{params[:id]}/vault"} Vault
+              %li
+                - if controller.controller_name == "passport"
+                  %a{:class=>'selected',
+                     :href=>"/#{params[:id]}/passport"} Passport
+                - else
+                  %a{:href=>"/#{params[:id]}/passport"} Passport
         #title 
           %img{:src=>"/images/title.png"}
           

@@ -57,13 +57,12 @@ function loadFriends(cur){
 	var friendsURL = "http://api.twitter.com/1/statuses/friends/" + screen_name + ".json?cursor=" + cur + "&callback=?";
 	$(".friend, .next, .prev").fadeOut().remove();
 	$.getJSON(friendsURL,function(json){
-	  if (json.next_cursor > 0) {
-		var next = document.createElement('div');
-		$(next).addClass("next");
-		$(next).append('<a onclick="loadFriends('+ json.next_cursor +'); return false;" href="">next</a>');
-		$(next).insertBefore($("#friends_bin>br"));
+	  if (json.previous_cursor < 0) {
+		var prev = document.createElement('div');
+		$(prev).addClass('prev');
+		$(prev).append('<a onclick="loadFriends('+ json.previous_cursor +'); return false;" href="">previous</a>');
+		$(prev).insertBefore($("#friends_bin>br"));
 	  }
-
 	  for (i in json.users) {
 		var d = document.createElement('div');
 		d.className = 'friend';
@@ -91,12 +90,13 @@ function loadFriends(cur){
 			}
 		});
 	  }
-	  if (json.previous_cursor < 0) {
-		var prev = document.createElement('div');
-		$(prev).addClass('prev');
-		$(prev).append('<a onclick="loadFriends('+ json.previous_cursor +'); return false;" href="">previous</a>');
-		$(prev).insertBefore($("#friends_bin>br"));
+	  if (json.next_cursor > 0) {
+		var next = document.createElement('div');
+		$(next).addClass("next");
+		$(next).append('<a onclick="loadFriends('+ json.next_cursor +'); return false;" href="">next</a>');
+		$(next).insertBefore($("#friends_bin>br"));
 	  }
+
 	  
 	});
 
