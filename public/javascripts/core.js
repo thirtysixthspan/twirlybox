@@ -52,6 +52,56 @@ function rebuildDD () {
 
 }
 
+function loadFriends(cur){
+	screen_name = $('#user_name').html();
+	var friendsURL = "http://api.twitter.com/1/statuses/friends/" + screen_name + ".json?cursor=" + cur + "&callback=?";
+	$(".friend, .next, .prev").fadeOut().remove();
+	$.getJSON(friendsURL,function(json){
+	  if (json.next_cursor > 0) {
+		var next = document.createElement('div');
+		$(next).addClass("next");
+		$(next).append('<a onclick="loadFriends('+ json.next_cursor +'); return false;" href="">next</a>');
+		$(next).appendTo($("#friends_bin"));
+	  }
+
+	  for (i in json.users) {
+		var d = document.createElement('div');
+		d.className = 'friend';
+		d.id = json.users[i].screen_name; //add a unique friend identifier
+		var img = document.createElement('img');
+		img.setAttribute("width", "75");
+		img.setAttribute("src", json.users[i].profile_image_url);
+		$(d).append(img)
+		t = document.createTextNode(json.users[i].screen_name);
+		$(d).append(t);
+		$(d).hide().insertAfter($("#friends_bin")).fadeIn();
+		//if there is a next cursor add it here?
+		$(d).droppable({
+			accept: '.sprite',
+			zIndex: 50,
+			over: function(ev,el) {$(this).addClass('enlarge');},
+			out: function (ev,el) {$(this).removeClass('enlarge')},
+			drop: function (ev,el) {
+			  $(this).removeClass("enlarge");
+			  var option={itemid:el.draggable.attr("id"), userid:$(this).attr("id")};
+			  //include the send function in the drop queue
+			  sendItem(option);
+			  el.draggable.fadeOut().remove();
+			  el.helper.fadeOut().remove(); //we can eliminate this step by changing the draggable helper to "original"
+			}
+		});
+	  }
+	  if (json.previous_cursor < 0) {
+		var prev = document.createElement('div');
+		$(prev).addClass('prev');
+		$(prev).append('previous');
+		$(prev).insertAfter($("#friends_bin"));
+	  }
+	  
+	});
+
+	rebuildDD();
+}
 /*
  *the function that is called when a draggable is dropped on a follower
  *expects Object
@@ -59,47 +109,12 @@ function rebuildDD () {
  */
 function sendItem (el) {
   //here we want to sanitze the input, I suppose grab our session or form "token" and enclose it in a post
- 
-  $.post( $(this).attr("id") + "/vault/send/", el, function(data) {/*alert("Congrats");*/} );
-
+  $.post( "vault/send/", el, function(data) {/*alert("Congrats");*/} );
   return true;
 }
 
 $(function() {
-	screen_name = $('#user_name').html();
-	var friendsURL = "http://api.twitter.com/1/statuses/friends/" + screen_name + ".json?cursor=-1&callback=?";
-	$.getJSON(friendsURL,function(json){
-	  for (i in json.users) {
-      var d = document.createElement('div');
-      d.className = 'friend';
-	  d.id = json.users[i].screen_name; //add a unique friend identifier
-      var img = document.createElement('img');
-      img.setAttribute("width", "75");
-      img.setAttribute("src", json.users[i].profile_image_url);
-      $(d).append(img)
-      t = document.createTextNode(json.users[i].screen_name);
-      $(d).append(t);
-      $(d).insertAfter($("#friends_bin"));
-      $(d).droppable({
-				accept: '.sprite',
-				zIndex: 50,
-				over: function(ev,el) {$(this).addClass('enlarge');},
-				out: function (ev,el) {$(this).removeClass('enlarge')},
-				drop: function (ev,el) {
-				  $(this).removeClass("enlarge");
-				  var option={itemid:el.draggable.attr("id"), userid:$(this).attr("id")};
-				  //alert(option.userid+": "+ option.itemid);//this is just here to see if it works
-				  //include the send function in the drop queue
-				  sendItem(option);
-				  el.draggable.fadeOut().remove();
-				  el.helper.fadeOut().remove(); //we can eliminate this step by changing the draggable helper to "original"
-				}
-		  });
-		}
-	});
-	
-	rebuildDD();
-
+	loadFriends(-1);
 });
 
 
