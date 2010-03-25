@@ -33,4 +33,4 @@ a:hover {text-decoration: underline;}
 #body {background:none; background-color:#fffde8;}
 #main {width:auto;margin:0 auto;padding:30px 0 50px;}
 #new {width:auto; text-align: center;}
-#footer {clear: both; background: none; border-top: 1px solid #222;}
+#footer {clear: both; background: none; }
