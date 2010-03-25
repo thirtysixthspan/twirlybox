@@ -2,13 +2,9 @@
   = controller.controller_name.upcase
   #user_name= @user.twitter_name
 
-.clear
-.grid_12.divider.nomargin
-.clear
-
 #main
   #vault.container
-    %h2 Your Items
+    %h2 items
 
     - @items.each do |item|
       .sprite{:id=>item.id}
@@ -18,14 +14,10 @@
     %br{:style=>"clear:left;"}
 
   #friends.container    
-    %h2 Your Friends
+    %h2 friends
 
     #friends_bin
 
-    %br{:style=>"clear:left;"}
+      %br{:style=>"clear:left;"}
 
 .clear
-.grid_12.divider.nomargin
-.clear
-
-

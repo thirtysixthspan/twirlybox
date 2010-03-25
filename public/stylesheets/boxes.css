@@ -1,7 +1,7 @@
 
 .container {
-  background: #f1f2e6;
-  border: 2px solid #bfbe99;
+  background: #fff;
+  border: 2px solid #879bcb;
   display: block;
   display:block;
   margin: 20px;
@@ -9,19 +9,23 @@
   position:relative;
   top:0;
   left:0;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
 }
 
 .container h2 {
-  color: #bfbe99;
+  color: #444;
   font-weight: bold;
   margin-bottom:5px;
-  font-size: 2em;
+  font-size: 1em;
   text-decoration: none;
   text-align:left;
 }
 
 .sprite,
-.friend {
+.friend,
+.next,
+.prev {
   width:75px;
   height:75px;
   padding: 10px;
