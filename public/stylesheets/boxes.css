@@ -31,6 +31,17 @@
   border: 2px solid #f1f2e6;
 }
 
+.sprite a {
+  text-decoration: none;
+  color: #bfbe99;
+}
+
+.sprite a:hover {
+  text-decoration: none;
+  color: #7f7e29;
+}
+
+
 .hot {
   background-color: #ffa;
 }
