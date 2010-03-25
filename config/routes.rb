@@ -41,10 +41,12 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
 
   map.connect 'admin/:action/:id', :controller=>'admin'
-  map.root :controller => "welcome"
+  map.root :controller => "box"
 
   map.connect ':id', :controller=>:gallery, :action=>:show
   map.connect ':id/vault', :controller=>:vault, :action=>:show
+  map.connect ':id/vault/send_item', :controller=>:vault, :action=>:send_item
+
   map.connect ':id/wallet', :controller=>:wallet, :action=>:show
   map.connect ':id/passport', :controller=>:passport, :action=>:show
 

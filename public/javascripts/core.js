@@ -60,7 +60,7 @@ function rebuildDD () {
 function sendItem (el) {
   //here we want to sanitze the input, I suppose grab our session or form "token" and enclose it in a post
  
-  $.post( $(this).attr("id") + "/vault/send/", el, function(data) {/*alert("Congrats");*/} );
+  $.post( "vault/send_item", el, function(data) {/*alert("Congrats");*/} );
 
   return true;
 }
