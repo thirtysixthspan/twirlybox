@@ -178,6 +178,8 @@ pattern.event_type_id = event_type.id
 pattern.save
 
 
+nano = Icon.new(:name=>'Nano', :picture=>'/images/nano.png', :url=>'', :icon_type_id=>icon_type.id)
+nano.save
 
 tea = Icon.new(:name=>'Tea', :picture=>'/images/tea.png', :url=>'', :icon_type_id=>icon_type.id)
 tea.save
@@ -688,12 +690,231 @@ user.save
 item = Item.new(:user_id=>user.id, :item_type_id=>tea_type.id)
 item.save
 
-user = User.new(:twitter_name=>'loslosbaby')
-user.save
+user = User.new(:twitter_name=>'loslosbaby'); user.save
 
 item = Item.new(:user_id=>user.id, :item_type_id=>tea_type.id)
 item.save
 
 
+nano_type = ItemType.new(:name=>"nano", :price=>200, :icon_id=>nano.id)
+nano_type.save
+
+
+user = User.new(:twitter_name=>'coderdad'); user.save                               
+user = User.new(:twitter_name=>'schofield'); user.save           
+user = User.new(:twitter_name=>'patrick24601'); user.save        
+user = User.new(:twitter_name=>'smartgoat'); user.save                              
+user = User.new(:twitter_name=>'michaeldick'); user.save                            
+user = User.new(:twitter_name=>'elmofromok'); user.save                             
+user = User.new(:twitter_name=>'jeffdavis'); user.save                                    
+user = User.new(:twitter_name=>'withfoam'); user.save                               
+user = User.new(:twitter_name=>'beaudesigns'); user.save                            
+user = User.new(:twitter_name=>'dustinbrewer'); user.save        
+user = User.new(:twitter_name=>'craftygoat'); user.save                             
+user = User.new(:twitter_name=>'granata'); user.save                                
+user = User.new(:twitter_name=>'danlovejoy'); user.save                             
+user = User.new(:twitter_name=>'samsims'); user.save         
+user = User.new(:twitter_name=>'dr34mc0d3r'); user.save                             
+user = User.new(:twitter_name=>'BeckyMcCray'); user.save                            
+user = User.new(:twitter_name=>'jdscolam'); user.save                               
+user = User.new(:twitter_name=>'jboeckman'); user.save                              
+user = User.new(:twitter_name=>'jacobbutcher'); user.save        
+user = User.new(:twitter_name=>'slmoore'); user.save                                
+user = User.new(:twitter_name=>'ptjackson'); user.save                              
+user = User.new(:twitter_name=>'erincarter'); user.save                             
+user = User.new(:twitter_name=>'neillharmer'); user.save                            
+user = User.new(:twitter_name=>'m00dimus'); user.save                               
+user = User.new(:twitter_name=>'JeffLowe'); user.save                               
+user = User.new(:twitter_name=>'MatthewSannes'); user.save                          
+user = User.new(:twitter_name=>'vindiconotitia'); user.save                         
+user = User.new(:twitter_name=>'kurber'); user.save             
+user = User.new(:twitter_name=>'danlacey'); user.save                               
+user = User.new(:twitter_name=>'hornbeck'); user.save                               
+user = User.new(:twitter_name=>'JZ'); user.save                                     
+user = User.new(:twitter_name=>'freshpeel'); user.save                              
+user = User.new(:twitter_name=>'jyoungblood'); user.save                            
+user = User.new(:twitter_name=>'christy_w'); user.save                              
+user = User.new(:twitter_name=>'otheophilus'); user.save                            
+user = User.new(:twitter_name=>'proidiot'); user.save
+
+item = Item.new(:user_id=>user.id, :item_type_id=>nano_type.id)
+item.save
+                               
+user = User.new(:twitter_name=>'dh405'); user.save                                  
+user = User.new(:twitter_name=>'whois101'); user.save                               
+user = User.new(:twitter_name=>'escoweb'); user.save                                
+user = User.new(:twitter_name=>'mgardner85'); user.save                             
+user = User.new(:twitter_name=>'vlucas'); user.save                                 
+user = User.new(:twitter_name=>'stuartkeating'); user.save                          
+user = User.new(:twitter_name=>'pauljeanquart'); user.save                          
+user = User.new(:twitter_name=>'gregbugaj'); user.save                                                                
+user = User.new(:twitter_name=>'mattwilliamson'); user.save                         
+user = User.new(:twitter_name=>'aelamb'); user.save                                 
+user = User.new(:twitter_name=>'beejaymorgan'); user.save                           
+user = User.new(:twitter_name=>'tmonhollon'); user.save                             
+user = User.new(:twitter_name=>'fishxx'); user.save                                 
+user = User.new(:twitter_name=>'craigteel'); user.save                              
+user = User.new(:twitter_name=>'scared'); user.save                                 
+user = User.new(:twitter_name=>'seanwayne'); user.save                              
+user = User.new(:twitter_name=>'jonfisher'); user.save                              
+user = User.new(:twitter_name=>'devinvenable'); user.save                           
+user = User.new(:twitter_name=>'rhoegg'); user.save                                 
+user = User.new(:twitter_name=>'jrr2ok'); user.save                                 
+user = User.new(:twitter_name=>'geoffreysimpson'); user.save                        
+user = User.new(:twitter_name=>'okor'); user.save                                   
+user = User.new(:twitter_name=>'rynomars'); user.save            
+user = User.new(:twitter_name=>'bertboan'); user.save                               
+user = User.new(:twitter_name=>'sidburgess'); user.save                             
+user = User.new(:twitter_name=>'timcoopermusic'); user.save      
+user = User.new(:twitter_name=>'matthewreily'); user.save                           
+user = User.new(:twitter_name=>'jhalstead'); user.save                              
+user = User.new(:twitter_name=>'galateadia'); user.save                             
+user = User.new(:twitter_name=>'librainiac'); user.save                             
+user = User.new(:twitter_name=>'jeditanner'); user.save             
+user = User.new(:twitter_name=>'blazedd'); user.save                                
+user = User.new(:twitter_name=>'cjeight'); user.save                                
+user = User.new(:twitter_name=>'samsoffes'); user.save                              
+user = User.new(:twitter_name=>'GROCIO'); user.save                                 
+user = User.new(:twitter_name=>'aestus'); user.save                                 
+user = User.new(:twitter_name=>'lizzistardust'); user.save                          
+user = User.new(:twitter_name=>'mediapeople'); user.save                            
+user = User.new(:twitter_name=>'patpraises'); user.save                             
+user = User.new(:twitter_name=>'jeremybranecky'); user.save                         
+user = User.new(:twitter_name=>'jdfmcok'); user.save                                
+user = User.new(:twitter_name=>'johnjac'); user.save                                
+user = User.new(:twitter_name=>'saucybritches'); user.save                          
+user = User.new(:twitter_name=>'cheesmo'); user.save                                
+user = User.new(:twitter_name=>'jasoncarini'); user.save            
+user = User.new(:twitter_name=>'cody_schilke'); user.save                           
+user = User.new(:twitter_name=>'31abunch'); user.save                               
+user = User.new(:twitter_name=>'MyJRNY'); user.save                                 
+user = User.new(:twitter_name=>'annmwhite'); user.save                              
+user = User.new(:twitter_name=>'amine'); user.save                                  
+user = User.new(:twitter_name=>'ibspoof'); user.save                                
+user = User.new(:twitter_name=>'Codeles'); user.save                                
+user = User.new(:twitter_name=>'cgorshing'); user.save                              
+user = User.new(:twitter_name=>'trey_brown'); user.save                             
+user = User.new(:twitter_name=>'nwp'); user.save                                    
+user = User.new(:twitter_name=>'morganestes'); user.save                            
+user = User.new(:twitter_name=>'Somna'); user.save                                  
+user = User.new(:twitter_name=>'joshuaogle'); user.save                             
+user = User.new(:twitter_name=>'rrichards'); user.save                              
+user = User.new(:twitter_name=>'josh_hawthorne'); user.save                         
+user = User.new(:twitter_name=>'sklososky'); user.save                              
+user = User.new(:twitter_name=>'mattsanders'); user.save                            
+user = User.new(:twitter_name=>'pabramo'); user.save                                
+user = User.new(:twitter_name=>'mobimanage'); user.save                            
+user = User.new(:twitter_name=>'lynntotherescue'); user.save                        
+user = User.new(:twitter_name=>'funkycold'); user.save                              
+user = User.new(:twitter_name=>'LanieBarrett'); user.save                           
+user = User.new(:twitter_name=>'lwheeler'); user.save            
+user = User.new(:twitter_name=>'chimchim237'); user.save         
+user = User.new(:twitter_name=>'mattgrimm'); user.save                              
+user = User.new(:twitter_name=>'kevinirwin'); user.save                             
+user = User.new(:twitter_name=>'Maeghan'); user.save                                
+user = User.new(:twitter_name=>'ConnexsCom'); user.save                             
+user = User.new(:twitter_name=>'stevencopley'); user.save                           
+user = User.new(:twitter_name=>'duregger'); user.save                               
+user = User.new(:twitter_name=>'kyle_jones'); user.save                             
+user = User.new(:twitter_name=>'eddieroach'); user.save                             
+user = User.new(:twitter_name=>'john_ruble'); user.save                             
+user = User.new(:twitter_name=>'David_North'); user.save                            
+user = User.new(:twitter_name=>'rlinger'); user.save                                
+user = User.new(:twitter_name=>'VAMissi'); user.save                                
+user = User.new(:twitter_name=>'schuchert'); user.save                              
+user = User.new(:twitter_name=>'cyberDrake'); user.save                             
+user = User.new(:twitter_name=>'3540media'); user.save                              
+user = User.new(:twitter_name=>'willjam513'); user.save                             
+user = User.new(:twitter_name=>'sammyboy405'); user.save                            
+user = User.new(:twitter_name=>'klepperson'); user.save          
+user = User.new(:twitter_name=>'mgrennan'); user.save                               
+user = User.new(:twitter_name=>'dannygsmith'); user.save                            
+user = User.new(:twitter_name=>'Merchant_Metrix'); user.save 
+user = User.new(:twitter_name=>'zinkly'); user.save                                 
+user = User.new(:twitter_name=>'FitnessFulfilmt'); user.save                        
+user = User.new(:twitter_name=>'timariyeh'); user.save                              
+user = User.new(:twitter_name=>'rexbarrett'); user.save                             
+user = User.new(:twitter_name=>'jed'); user.save                                                                           
+user = User.new(:twitter_name=>'katality'); user.save                               
+user = User.new(:twitter_name=>'rbbruce'); user.save                                
+user = User.new(:twitter_name=>'chriskaukis'); user.save                            
+user = User.new(:twitter_name=>'divinism'); user.save                               
+user = User.new(:twitter_name=>'michaelbeam'); user.save                            
+user = User.new(:twitter_name=>'perinandy'); user.save
+item = Item.new(:user_id=>user.id, :item_type_id=>nano_type.id)
+item.save
+
+
+                              
+user = User.new(:twitter_name=>'allisonallioppe'); user.save 
+item = Item.new(:user_id=>user.id, :item_type_id=>nano_type.id)
+item.save
+
+
+                       
+user = User.new(:twitter_name=>'shoaibss'); user.save                               
+user = User.new(:twitter_name=>'davidglover'); user.save                            
+user = User.new(:twitter_name=>'kingisaac'); user.save       
+user = User.new(:twitter_name=>'gorpheus'); user.save                               
+user = User.new(:twitter_name=>'matt_ralls'); user.save                             
+user = User.new(:twitter_name=>'JEG2'); user.save                                   
+user = User.new(:twitter_name=>'kingduggan'); user.save                             
+user = User.new(:twitter_name=>'visualinventor'); user.save                         
+user = User.new(:twitter_name=>'itrackaction'); user.save                           
+user = User.new(:twitter_name=>'dustinbm'); user.save                               
+user = User.new(:twitter_name=>'JamesHarber'); user.save                            
+user = User.new(:twitter_name=>'rickchatham'); user.save                            
+user = User.new(:twitter_name=>'HLytle'); user.save                                 
+user = User.new(:twitter_name=>'lofolulu'); user.save                               
+user = User.new(:twitter_name=>'ballerinatoes'); user.save                          
+user = User.new(:twitter_name=>'alpks'); user.save                                  
+user = User.new(:twitter_name=>'pmonies'); user.save                                
+user = User.new(:twitter_name=>'stacey.clermont'); user.save                        
+user = User.new(:twitter_name=>'tractionokc'); user.save     
+user = User.new(:twitter_name=>'tanner913'); user.save                              
+user = User.new(:twitter_name=>'austinspires'); user.save                          
+user = User.new(:twitter_name=>'sherryayn'); user.save       
+user = User.new(:twitter_name=>'james_stafford'); user.save                         
+user = User.new(:twitter_name=>'bill_cooper'); user.save     
+user = User.new(:twitter_name=>'joraye'); user.save                                 
+user = User.new(:twitter_name=>'eblakejackson'); user.save                          
+user = User.new(:twitter_name=>'jgmize'); user.save                                 
+user = User.new(:twitter_name=>'michaelbeam'); user.save                            
+user = User.new(:twitter_name=>'dmp_gctc'); user.save            
+user = User.new(:twitter_name=>'joseph_donley'); user.save                          
+user = User.new(:twitter_name=>'moreindie'); user.save                              
+user = User.new(:twitter_name=>'loslosbaby'); user.save          
+user = User.new(:twitter_name=>'garrettrayj'); user.save                            
+user = User.new(:twitter_name=>'josephholsten'); user.save                          
+user = User.new(:twitter_name=>'saintjava'); user.save                              
+user = User.new(:twitter_name=>'daveatBACK40'); user.save                          
+user = User.new(:twitter_name=>'photomattmills'); user.save                        
+user = User.new(:twitter_name=>'daltonparsons'); user.save                          
+user = User.new(:twitter_name=>'ace76'); user.save                                  
+user = User.new(:twitter_name=>'badbettys'); user.save                              
+user = User.new(:twitter_name=>'briancorder'); user.save                            
+user = User.new(:twitter_name=>'stewarthines'); user.save        
+user = User.new(:twitter_name=>'shrapnull'); user.save           
+user = User.new(:twitter_name=>'jonjonsiler'); user.save                            
+user = User.new(:twitter_name=>'blogging4jobs'); user.save   
+user = User.new(:twitter_name=>'trubane'); user.save                                
+user = User.new(:twitter_name=>'williamdpaiva'); user.save                          
+user = User.new(:twitter_name=>'yoyo007'); user.save                                
+user = User.new(:twitter_name=>'dangordon'); user.save           
+user = User.new(:twitter_name=>'oushadow'); user.save            
+user = User.new(:twitter_name=>'vajarov'); user.save                                
+user = User.new(:twitter_name=>'LightCMS'); user.save                               
+user = User.new(:twitter_name=>'CodyStrunk'); user.save                             
+user = User.new(:twitter_name=>'cole_shelton'); user.save                           
+user = User.new(:twitter_name=>'nebbed'); user.save                                 
+user = User.new(:twitter_name=>'micahalcorn'); user.save         
+user = User.new(:twitter_name=>'eletelephant'); user.save    
+user = User.new(:twitter_name=>'KristenAshford'); user.save                         
+user = User.new(:twitter_name=>'IwRyanB'); user.save                                
+user = User.new(:twitter_name=>'jeanwarner'); user.save          
+user = User.new(:twitter_name=>'brainboy'); user.save                               
+user = User.new(:twitter_name=>'karolynliberty'); user.save                         
+user = User.new(:twitter_name=>'bobbijbailey'); user.save        
+user = User.new(:twitter_name=>'garrettrayj'); user.save        
 
 

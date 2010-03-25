@@ -2,10 +2,10 @@ development:
   adapter: mysql
   database: twirlybot_core
   username: root
-  password: homeslice
+  password: 
   pool: 5
   timeout: 5000
-  socket: /tmp/mysql.sock
+#  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
