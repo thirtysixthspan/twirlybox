@@ -61,7 +61,7 @@ function loadFriends(cur){
 		var next = document.createElement('div');
 		$(next).addClass("next");
 		$(next).append('<a onclick="loadFriends('+ json.next_cursor +'); return false;" href="">next</a>');
-		$(next).appendTo($("#friends_bin"));
+		$(next).insertBefore($("#friends_bin>br"));
 	  }
 
 	  for (i in json.users) {
@@ -74,7 +74,7 @@ function loadFriends(cur){
 		$(d).append(img)
 		t = document.createTextNode(json.users[i].screen_name);
 		$(d).append(t);
-		$(d).hide().insertAfter($("#friends_bin")).fadeIn();
+		$(d).hide().insertBefore($("#friends_bin>br")).fadeIn();
 		//if there is a next cursor add it here?
 		$(d).droppable({
 			accept: '.sprite',
@@ -94,8 +94,8 @@ function loadFriends(cur){
 	  if (json.previous_cursor < 0) {
 		var prev = document.createElement('div');
 		$(prev).addClass('prev');
-		$(prev).append('previous');
-		$(prev).insertAfter($("#friends_bin"));
+		$(prev).append('<a onclick="loadFriends('+ json.previous_cursor +'); return false;" href="">previous</a>');
+		$(prev).insertBefore($("#friends_bin>br"));
 	  }
 	  
 	});
@@ -109,7 +109,7 @@ function loadFriends(cur){
  */
 function sendItem (el) {
   //here we want to sanitze the input, I suppose grab our session or form "token" and enclose it in a post
-  $.post( "vault/send/", el, function(data) {/*alert("Congrats");*/} );
+  $.post( "vault/send_item", el, function(data) {/*alert("Congrats");*/} );
   return true;
 }
 

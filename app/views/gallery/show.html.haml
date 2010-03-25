@@ -6,12 +6,15 @@
 .grid_12.divider.nomargin
 .clear
 
-- @events.each do |event|
-  - if event.event_type.icon.icon_type.name !~ /Gowalla/     
-    %p
-      %a{:href=>"http://twitter.com/#{@user.twitter_name}/status/#{event.twitter_status_id}" }
-        %img{:src=>event.event_type.icon.picture} 
-        #{event.event_type.name}  
+#vault.container
+  %h2 Your Items
+
+  - @events.each do |event|
+    - if event.event_type.icon.icon_type.name !~ /Gowalla/     
+      %p
+        %a{:href=>"http://twitter.com/#{@user.twitter_name}/status/#{event.twitter_status_id}" }
+          %img{:src=>event.event_type.icon.picture} 
+          #{event.event_type.name}  
 
 .clear
 .grid_12.divider.nomargin
